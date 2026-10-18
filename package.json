@@ -1,0 +1,50 @@
+{
+  "name": "@rotom/synapse",
+  "version": "0.1.0",
+  "description": "Rotom synapse — canonical cognitive contracts (EvidenceReference, KnowledgeReference, MemoryReference, SupportingEvidence, ReasoningSupport) shared by Memory/Knowledge/Evidence/Reasoning",
+  "keywords": [
+    "rotom",
+    "cognitive",
+    "ai",
+    "development",
+    "workspace",
+    "synapse",
+    "contracts",
+    "canonical",
+    "evidence",
+    "memory",
+    "knowledge"
+  ],
+  "author": "Project Rotom Contributors",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "prepare": "npm run build",
+    "test": "vitest run",
+    "test:offline": "node tests/offline/offline-check.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
